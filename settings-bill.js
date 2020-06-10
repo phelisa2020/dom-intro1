@@ -89,8 +89,8 @@ var billWithSettings = function (){
 		getTotalCallCost,
 		getTotalSmsCost,
 		sendSms,
-		totalClassName,
-		hasReachedCriticalLevel,
+		 totalClassName,
+		 hasReachedCriticalLevel,
 
 	}
 }

@@ -1,30 +1,42 @@
-function RadioBtnBill (){
-	var callsTotal  = 0;
-	var smsTotal = 0;
-	var overallTotal = 0;
+function radioBill(){
+	var callsTotal  = 0.00;
+	var smsTotal = 0.00;
+	var overallTotal = 0.00;
 
 	function forEachCallAdd (){
-		callsTotal += 2.75
-		overallTotal += 2.75;
+		// if(billType === 'call'){
+			callsTotal += 2.75
+			// overallTotal += 2.75;
+		// }
+		
 	}
 	function newCallsTotal (){
-		callsTotal
+		return callsTotal.toFixed(2)
+
 	}
 	function forEachSmsAdd (){
-		smsTotal+=0.75
-		overallTotal+=0.75;
+		// if(billType === 'sms'){
+			smsTotal+=0.75
+		// overallTotal+=0.75;
+		// }
+		
 	}
 	function newSmsTotal (){
-		return smsTotal;
+		return smsTotal.toFixed(2)
 	}
 	function finalTotal (){
-		return overallTotal;
+		return (callsTotal + smsTotal).toFixed(2)
 	}
 	function warningLevel (){
+	if(finalTotal >= 30){
 		return 'warning';
 	}
+}
 	function criticalLevel (){
-		return 'critical';
+		 if(finalTotal >= 50){
+		 	return 'critical';
+		 }
+		
 	}
 	return {
 		forEachCallAdd,

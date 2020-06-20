@@ -5,30 +5,38 @@ var textBill = function(){
 
 	function forEachCall(){
 		calls += 2.75;
-		totalAdd += 2.75;
+		// totalAdd += 2.75;
 	}
 	function forEachSms(){
 		sms += 0.75
-		totalAdd += 0.75
+		// totalAdd += 0.75
 	}
 	function totalCallsTotal (){
-		return calls;
+		return calls.toFixed(2)
 	}
 	function totalSmsTotal(){
-		return sms;
+		return sms.toFixed(2)
 	}
-	function warningLevel(){
+	function total(){
+		return (calls + sms).toFixed(2)
+	}
+	function warningLevels(){
+	if (total() >= 30){
 		return 'warning'
 	}
-	function criticalLevel(){
+}
+	function criticalLevels(){
+	if (total() >= 50){
 		return'critical'
 	}
+}
 	return{
 		forEachCall,
 		forEachSms,
 		totalCallsTotal,
 		totalSmsTotal,
-		warningLevel,
-		criticalLevel
+		warningLevels,
+		criticalLevels,
+		total
 	}
 }

@@ -76,12 +76,13 @@ describe('The settingWithBill Function', function(){
 
 		settingsBill.setCallCost(2.75);
 		settingsBill.setSmsCost(0.85);
-
-		settingsBill.makeCall();
-		settingsBill.makeCall();
-		settingsBill.makeCall();
-
 		settingsBill.setCriticalLevel(10);
+
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+
+		
 		assert.equal(8.25, settingsBill.getTotalCost());
 		assert.equal(8.25, settingsBill.getTotalCallCost());
 		assert.equal(0.00, settingsBill.getTotalSmsCost());
@@ -92,11 +93,12 @@ describe('The settingWithBill Function', function(){
 		
 		settingsBill.setCallCost(1.35);
 		settingsBill.setSmsCost(0.85);
-
-		settingsBill.makeCall();
-		settingsBill.makeCall();
-
 		settingsBill.setCriticalLevel(10);
+
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+
+		
 		assert.equal(2.70, settingsBill.getTotalCost())
 		assert.equal(2.70, settingsBill.getTotalCallCost())
 		assert.equal(0.00, settingsBill.getTotalSmsCost())
@@ -109,11 +111,12 @@ describe('The settingWithBill Function', function(){
 
 		settingsBill.setCallCost(1.35);
 		settingsBill.setSmsCost(0.85);
-
-		settingsBill.sendSms();
-		settingsBill.sendSms();
-
 		settingsBill.setCriticalLevel(10);
+
+		settingsBill.sendSms();
+		settingsBill.sendSms();
+
+		
 		assert.equal(1.70, settingsBill.getTotalCost())
 		assert.equal(0.00, settingsBill.getTotalCallCost())
 		assert.equal(1.70, settingsBill.getTotalSmsCost())
@@ -125,12 +128,13 @@ describe('The settingWithBill Function', function(){
 		
 		settingsBill.setCallCost(1.35);
 		settingsBill.setSmsCost(0.85);
+		settingsBill.setCriticalLevel(10);
+
 
 		settingsBill.sendSms();
 		settingsBill.sendSms();
 		settingsBill.makeCall();
-		settingsBill.setCriticalLevel(10);
-
+		
 		assert.equal(3.05, settingsBill.getTotalCost())
 		assert.equal(1.35, settingsBill.getTotalCallCost())
 		assert.equal(1.70, settingsBill.getTotalSmsCost())
@@ -178,6 +182,7 @@ describe('The settingWithBill Function', function(){
 
 		settingsBill.setCallCost(2.50);
 		settingsBill.setSmsCost(0.85);
+		settingsBill.setCriticalLevel(10);
 		
 
 		settingsBill.makeCall();
@@ -186,7 +191,7 @@ describe('The settingWithBill Function', function(){
 		settingsBill.makeCall();
 		settingsBill.makeCall();
 
-		settingsBill.setCriticalLevel(10);
+		
 		assert.equal('critical', settingsBill.totalClassName())
 		assert.equal(10, settingsBill.getTotalCallCost())
 		
@@ -200,13 +205,14 @@ describe('The settingWithBill Function', function(){
 		settingsBill.setCallCost(2.50);
 		settingsBill.setSmsCost(0.85);
 		settingsBill.setWarningLevel(8);
-		
-
-		settingsBill.makeCall();
-		settingsBill.makeCall();
-		settingsBill.makeCall();
-		settingsBill.makeCall();
 		settingsBill.setCriticalLevel(10);
+		
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+		settingsBill.makeCall();
+
+		
 		assert.equal('critical', settingsBill.totalClassName())
 		assert.equal(10, settingsBill.getTotalCallCost())
 		

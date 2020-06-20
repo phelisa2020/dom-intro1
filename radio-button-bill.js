@@ -28,16 +28,18 @@ function radioBill(){
 		return (callsTotal + smsTotal).toFixed(2)
 	}
 	function warningLevel (){
-	if(finalTotal >= 30){
-		return 'warning';
+	if(finalTotal() >= 30){
+		return 'warning'
 	}
 }
-	function criticalLevel (){
-		 if(finalTotal >= 50){
-		 	return 'critical';
-		 }
+function criticalLevel(){
+	if(finalTotal() >= 50){
+		 	return 'critical'
+}
+	
+ }
 		
-	}
+	
 	return {
 		forEachCallAdd,
 		newCallsTotal,

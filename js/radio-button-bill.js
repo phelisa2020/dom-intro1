@@ -23,12 +23,17 @@ if (billItemType === 'call'){
     // var totalCost = callsTotal2 +  smsTotal2;
     totalTwoElement.innerHTML = radioButton.finalTotal();
 
-    
-     	totalTwoElement.classList.add('critical')
-    
+    const color = radioButton.warningLevel();
+   totalTwoElement.classList.add(color);
 
+   const color2 = radioButton.criticalLevel();
+   totalTwoElement.classList.add(color2);
 
- 	totalTwoElement.classList.add('warning')	
+    // totalTwoElement.classList.remove('critical')
+    // totalTwoElement.classList.remove('warning')
+
+    // totalTwoElement.classList.add('critical')
+    // totalTwoElement.classList.add('warning')	
     } 
 
 radioBillAddBtnElement.addEventListener('click', radioBillTotal); 

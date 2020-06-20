@@ -9,13 +9,13 @@ var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo')
 var callTotalSettingsElement = document.querySelector('.callTotalSettings');
 var smsTotalSettingsElement = document.querySelector('.smsTotalSettings');
 var totalSettingsElement = document.querySelector('.totalSettings');
-let settingsBill = billWithSetting();
+let settingsBill = billWithSettings();
 
 function updateSettingBtnClicked (){
 
     settingsBill.setCallCost(Number(callCostSettingElement.value)); 
-      settingsBill.setSmsCost(Number(smsCostSettingElement.value));
-      settingsBill.setWarningLevel(Number(warningLevelSettingElement.value)); 
+    settingsBill.setSmsCost(Number(smsCostSettingElement.value));
+    settingsBill.setWarningLevel(Number(warningLevelSettingElement.value)); 
     settingsBill.setCriticalLevel(Number(criticalLevelSettingElement.value));
       colorCode()
 

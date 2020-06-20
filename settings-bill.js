@@ -1,4 +1,4 @@
-var billWithSetting = function (){
+var billWithSettings = function (){
 	var theCallCost = 0.00;
 	var theSmsCost = 0.00;
 	var theWarningLevel = 0.00;

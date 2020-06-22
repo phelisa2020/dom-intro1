@@ -1,34 +1,27 @@
 function  CalculateBill(){
-	var call = 0
-	var sms = 0
-	function setStringCall(){
-		call++
-	}
-	function setStringSms(){
-		sms++
-	}
-	function getCallString(){
-		return call
-	}
-	function getSmsString(){
-		return sms
-	}
-	function addCall(){
-		call +=2.75
-	}
-	function addSms(){
-		sms +=0.75
-	}
-	function getTotal(){
-		return call
-	}
-	return{
-		setStringCall,
-		setStringSms,
-		getCallString,
-		getSmsString,
-		addSms,
-		addCall,
-		getTotal
-	}
+	var billTotal = 0
+	function totalPhoneBill(){
+
+	var billString= billStringElement.value
+    var billItems = billString.split(",");
+    // a variable for the total phone bill.
+    //loop over all the bill items
+    for (var i=0;i<billItems.length;i++){
+        var billItem = billItems[i].trim();
+        if (billItem === "call"){
+            billTotal += 2.75;
+        }
+        else if (billItem === "sms"){
+            billTotal += 0.75;
+        }
+    }
+    
+    //round to two decimals
+    var roundedBillTotal = billTotal.toFixed(2);
+    return billTotal.toFixed(2)
+	
+}
+return{
+	totalPhoneBill
+}
 }

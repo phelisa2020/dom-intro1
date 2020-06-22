@@ -1,8 +1,8 @@
-function  CalculateBill(){
-	var billTotal = 0
-	function totalPhoneBill(){
-
-	var billString= billStringElement.value
+// function  CalculateBill(){
+// 	var billTotal = 0
+	function totalPhoneBill(billString){
+		var billTotal = 0
+	// var billString= billStringElement.value
     var billItems = billString.split(",");
     // a variable for the total phone bill.
     //loop over all the bill items
@@ -17,11 +17,11 @@ function  CalculateBill(){
     }
     
     //round to two decimals
-    var roundedBillTotal = billTotal.toFixed(2);
-    return billTotal.toFixed(2)
+    // var roundedBillTotal = billTotal
+    return billTotal
 	
 }
-return{
-	totalPhoneBill
-}
-}
+// return{
+// 	totalPhoneBill
+// }
+// }

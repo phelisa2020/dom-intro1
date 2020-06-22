@@ -2,24 +2,25 @@ var billStringElement = document.querySelector(".billString");
 var calculateBtnElement = document.querySelector('.calculateBtn');
 var billTotalElement = document.querySelector(".billTotal");
 var billTotalSpansElement = document.querySelector('.total:checked')
-let calculate = CalculateBill();
+var billTotalSpansElement = document.querySelector('.total')
+// let calculate = CalculateBill();
 // function totalPhoneBill(){
 
 // }
 function calculateFunction(){
-	var billString= billStringElement.value
+var billString= billStringElement.value
  var roundedBillTotal = totalPhoneBill(billString);
-    billTotalElement.innerHTML = billString;
+    billTotalElement.innerHTML = roundedBillTotal.toFixed(2)
 
-	var billTotalSpansElement = document.querySelector('.total')
+	
     const currentTotal = Number(roundedBillTotal);
 
 	billTotalSpansElement.classList.remove('warning')
-    billTotalSpansElement.classList.remove('danger')
+    billTotalSpansElement.classList.remove('critical')
 
  
  	if(currentTotal >= 30){
- 		billTotalSpansElement.classList.add('danger');
+ 		billTotalSpansElement.classList.add('critical');
  	}
  	else if(currentTotal >= 20 && currentTotal<30){
  		billTotalSpansElement.classList.add('warning');

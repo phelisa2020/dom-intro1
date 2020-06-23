@@ -1,4 +1,3 @@
-
 var callCostSettingElement = document.querySelector('.callCostSetting');
 var smsCostSettingElement = document.querySelector('.smsCostSetting');
 var warningLevelSettingElement = document.querySelector('.warningLevelSetting');
@@ -21,7 +20,6 @@ function updateSettingBtnClicked (){
 
 }
 
-
  function radioBillSetTotal (){
  
  var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
@@ -34,11 +32,9 @@ function updateSettingBtnClicked (){
      }
 
      
-     callTotalSettingsElement.innerHTML= settingsBill.getTotalCallCost();
-     smsTotalSettingsElement.innerHTML= settingsBill.getTotalSmsCost();
-   
-    // totalCost4 = callTotal +  smsTotal;
-   totalSettingsElement.innerHTML = settingsBill.getTotalCost();
+    callTotalSettingsElement.innerHTML= settingsBill.getTotalCallCost();
+    smsTotalSettingsElement.innerHTML= settingsBill.getTotalSmsCost();
+    totalSettingsElement.innerHTML = settingsBill.getTotalCost();
     colorCode()
  }
 

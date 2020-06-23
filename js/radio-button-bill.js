@@ -1,6 +1,4 @@
-
 var radioBillAddBtnElement = document.querySelector('.radioBillAddBtn');
-
 var callTotalTwoElement	= document.querySelector('.callTotalTwo');
 var smsTotalTwoElement	= document.querySelector('.smsTotalTwo')
 var totalTwoElement = document.querySelector('.totalTwo')
@@ -20,7 +18,6 @@ if (billItemType === 'call'){
 
     callTotalTwoElement.innerHTML= radioButton.newCallsTotal();
     smsTotalTwoElement.innerHTML= radioButton.newSmsTotal();
-    // var totalCost = callsTotal2 +  smsTotal2;
     totalTwoElement.innerHTML = radioButton.finalTotal();
 
     const color = radioButton.warningLevel();
@@ -29,11 +26,7 @@ if (billItemType === 'call'){
    const color2 = radioButton.criticalLevel();
    totalTwoElement.classList.add(color2);
 
-    // totalTwoElement.classList.remove('critical')
-    // totalTwoElement.classList.remove('warning')
-
-    // totalTwoElement.classList.add('critical')
-    // totalTwoElement.classList.add('warning')	
+    
     } 
 
 radioBillAddBtnElement.addEventListener('click', radioBillTotal); 

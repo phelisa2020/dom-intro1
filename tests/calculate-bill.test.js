@@ -1,59 +1,86 @@
 describe('The calculate bill Function', function(){
-	it('should be able to set the call strings',function(){
-		 var billItems = totalPhoneBill();
+	it('should charge 2.75 for each call ',function(){
+		 var billItems = phoneBill();
 
-		billItem.billItems('call');
+		billItems.totalPhoneBill('call');
 		
 
-		assert.equal(billItem.billTotal, 2.75)
+		assert.equal(billItems.getTotal(),2.75)
 
 		
 	})
 
-	// it('should be able to set the sms strings',function(){
-	// 	let calculate = CalculateBill();
+	it('should charge 0.75 for each sms',function(){
+		 var billItems = phoneBill();
 
-	// 	calculate.setStringSms('sms');
-	// 	calculate.setStringSms('sms');
-	// 	calculate.setStringSms('sms');
+		billItems.totalPhoneBill('sms');
+		
 
-	// 	assert.equal(3, calculate.getSmsString())
+		assert.equal(billItems.getTotal(),0.75)
 
 		
-	// })
+	})
+	it('should be able separate  a strings of call and sms and become an array',function(){
+		 var billItems = phoneBill();
 
-	// it('should be able to set both sms and call strings',function(){
-	// 	let calculate = CalculateBill();
+		billItems.totalPhoneBill('sms, call, sms');
+		
 
-	// 	calculate.setStringSms('sms');
-	// 	calculate.setStringSms('sms');
-	// 	calculate.setStringSms('sms');
-	// 	calculate.setStringCall('call');
-	// 	calculate.setStringCall('call');
+		assert.equal(billItems.getTotal(), 4.25 )
 
-	// 	assert.equal(3, calculate.getSmsString())
-	// 	assert.equal(2, calculate.getCallString())
-	// })
+		
+	})
 
-	// it('should be able to add 2.75 for each new call added',function(){
-	// 	let calculate = CalculateBill();
+	it('should be able to add both sms and call strings',function(){
+		 var billItems = phoneBill();
 
-	// 	calculate.addCall(2.75);
-	// 	calculate.addCall(2.75);
-	// 	calculate.addSms(0,75);
+		billItems.totalPhoneBill('sms, call, sms');
+		
 
-	// 	assert.equal(5.5, calculate.getTotal())
-	// })
+		assert.equal(billItems.getTotal(), 4.25 )
 
-	// it('should be able to add 0.75 for each new call added',function(){
-	// 	let calculate = CalculateBill();
+		
+	})
 
-	// 	calculate.addCall(2.75);
-	// 	calculate.addCall(2.75);
-	// 	calculate.addSms(0,75);
+	it('should change to warning when it is greater than R20', function(){
+		var billItems = phoneBill();
 
-	// 	assert.equal(5.5, calculate.getTotal())
-	// })
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		
+		assert.equal('warning', billItems.warningLevels())
+	});
+
+	it('should change to critical when it is greater than R30', function(){
+		var billItems = phoneBill();
+
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		billItems.totalPhoneBill('call');
+		
+		
+		assert.equal('critical', billItems.criticalLevels())
+	});
 
 
+	
+
+	
 	})

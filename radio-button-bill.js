@@ -1,7 +1,7 @@
 function radioBill(){
-	var callsTotal  = 0.00;
-	var smsTotal = 0.00;
-	var overallTotal = 0.00;
+	var callsTotal  = 0
+	var smsTotal = 0
+	var overallTotal = 0
 
 	function forEachCallAdd (){
 		// if(billType === 'call'){

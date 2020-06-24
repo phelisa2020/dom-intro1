@@ -1,10 +1,10 @@
 var billWithSettings = function (){
-	var theCallCost = 0.00;
-	var theSmsCost = 0.00;
-	var theWarningLevel = 0.00;
-	var theCriticalLevel = 0.00;
-	var callCostTotal = 0.00;
-	var smsCostTotal =0.00;
+	var theCallCost = 0
+	var theSmsCost = 0
+	var theWarningLevel = 0
+	var theCriticalLevel = 0
+	var callCostTotal = 0
+	var smsCostTotal =0
 
 
 	function setCallCost(callCost){

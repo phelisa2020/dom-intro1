@@ -1,7 +1,7 @@
 var textBill = function(){
-	var calls = 0;
-	var sms = 0;
-	var totalAdd = 0;
+	var calls = 0
+	var sms = 0
+	var totalAdd = 0
 
 	function forEachCall(){
 		calls += 2.75;

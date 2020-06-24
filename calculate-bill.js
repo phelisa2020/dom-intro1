@@ -1,44 +1,16 @@
-function phoneBill(){
-	 const callPrice = 2.75
-	 const smsCost = 0.75
-	 const warningLevel = 20
-	 const criticalLevel = 30
-
-	var billTotal = 0
-
 function totalPhoneBill(billString){
+     var billTotal = 0
     var billItems = billString.split(',');
     for (var i=0;i<billItems.length;i++){
         var billItem = billItems[i].trim();
         if (billItem === "call"){
-            billTotal += callPrice;
+            billTotal += 2.75;
         }
         else if(billItem === "sms"){
-            billTotal += smsCost;
+            billTotal += 0.75;
         }
     }
-}
-function getTotal(){
+
+
 	return billTotal
-}
-
- function warningLevels (){
- 	if(billTotal >= warningLevel){
- 		return 'warning'
- 	}
- }
- function criticalLevels(){
- 	if(billTotal >= criticalLevel){
- 		 	return 'critical'
- }
-	
-  }
-
-    
-    return {
-    	totalPhoneBill,
-    	getTotal,
-     warningLevels,
-    	 criticalLevels
-	}
 }

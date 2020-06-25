@@ -1,12 +1,20 @@
 describe('The calculate bill Function', function(){
-	it('should charge call cost and sms cost string ',function(){
-		 var billItems = totalPhoneBill();
+	it('should be able to give you the total of call and sms string entered ',function(){
 
-		billItem.billItems('call,sms,call');
+		assert.equal(totalPhoneBill('call,sms,call,call,call'),  11.75 ) 
 		
+	})
 
-		assert.equal(billItem.billTotal,6.25)
+	it('should be able to give you the total of call cost ',function(){
 
+		assert.equal(totalPhoneBill('call'),  2.75 ) 
+		
+	})
+
+	it('should be able to give you the total of sms cost ',function(){
+
+		assert.equal(totalPhoneBill('sms'),  0.75 ) 
 		
 	})
 });
+
